@@ -35,6 +35,10 @@ public class SignUpActivity extends AppCompatActivity {
         bindWidget();
     }// Main Method
 
+    public  void clickSingInMain(View view){
+
+    }//clickSignInMain
+
     private void bindWidget() {
         idCardEditText =(EditText) findViewById(R.id.editText);
         passEditText = (EditText) findViewById(R.id.editText2);

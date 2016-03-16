@@ -7,7 +7,8 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.kru.pag.bicbook.MainActivity">
+    tools:context="com.kru.pag.bicbook.MainActivity"
+    android:background="@drawable/wall18">
 
     <LinearLayout
         android:orientation="horizontal"
@@ -29,5 +30,38 @@
             android:id="@+id/button2"
             android:layout_weight="1"
             android:onClick="clickSignUpMain" />
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="@dimen/icon"
+        android:layout_height="@dimen/icon"
+        android:id="@+id/imageView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="80dp"
+        android:src="@drawable/logo_carabao" />
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="220dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imageView"
+        android:layout_centerHorizontal="true"
+        android:background="#82ffffff"
+        android:padding="25dp">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/editText3"
+            android:hint="@string/id_card"
+            android:inputType="number"
+            android:onClick="clickSingInMain" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/editText4"
+            android:hint="@string/password"
+            android:inputType="textPassword" />
     </LinearLayout>
 </RelativeLayout>
