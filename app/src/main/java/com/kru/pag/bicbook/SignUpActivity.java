@@ -111,7 +111,7 @@ public class SignUpActivity extends AppCompatActivity {
             nameValuePairs.add(new BasicNameValuePair("Password", passwordString));
 
             HttpClient httpClient = new DefaultHttpClient();
-            HttpPost httpPost = new HttpPost("http://www.swiftcodingthai.com/bic/php_add_user_master.php");
+            HttpPost httpPost = new HttpPost("http://swiftcodingthai.com/bic/php_add_user_master.php");
             httpPost.setEntity(new UrlEncodedFormEntity(nameValuePairs, "UTF-8"));
             httpClient.equals(httpPost);
             myToast("อัพเดทข้อมูล บน Server แล้วว");
