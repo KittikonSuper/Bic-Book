@@ -32,36 +32,4 @@
             android:onClick="clickSignUpMain" />
     </LinearLayout>
 
-    <ImageView
-        android:layout_width="@dimen/icon"
-        android:layout_height="@dimen/icon"
-        android:id="@+id/imageView"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="80dp"
-        android:src="@drawable/logo_carabao" />
-
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="220dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/imageView"
-        android:layout_centerHorizontal="true"
-        android:background="#82ffffff"
-        android:padding="25dp">
-
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/editText3"
-            android:hint="@string/id_card"
-            android:inputType="number"
-            android:onClick="clickSingInMain" />
-
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/editText4"
-            android:hint="@string/password"
-            android:inputType="textPassword" />
-    </LinearLayout>
 </RelativeLayout>
