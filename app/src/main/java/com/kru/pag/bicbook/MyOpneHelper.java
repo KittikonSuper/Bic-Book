@@ -14,7 +14,7 @@ public class MyOpneHelper extends SQLiteOpenHelper{
 
     private static final String create_user_table = "create table userTABLE (" +
             "_id integer primary key, " +
-            "User text" +
+            "User text," +
             "Password text," +
             "Name text," +
             "IDcard text);";
