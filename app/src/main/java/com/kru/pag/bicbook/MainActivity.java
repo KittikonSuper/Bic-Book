@@ -10,7 +10,7 @@ public class MainActivity extends AppCompatActivity {
     //Explicit
     private EditText userEditText, passEditText;
     private String userString, PasswordString;
-
+    private MyManage myManage ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
 
         //Bind Widget
         bindWidget();
+        myManage = new MyManage(this);
     }   // Main Method
     public void clickSignInMain(View view) {
 
