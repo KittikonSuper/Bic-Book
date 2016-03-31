@@ -1,6 +1,7 @@
 package com.kru.pag.bicbook;
 
 import android.content.Intent;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.StrictMode;
 import android.support.v7.app.AppCompatActivity;
@@ -8,6 +9,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
@@ -153,9 +155,47 @@ public class MainActivity extends AppCompatActivity {
             MyAlertDialog myAlertDialog = new MyAlertDialog();
             myAlertDialog.myDialog(this,"มีช่องว่าง", "กรุณากรอกทุกช่องค่ะ");
         } else {
+            checkUser();
+
 
         }
     }// clickSingIn
+
+    private void checkUser() {
+
+        try {
+
+            SQLiteDatabase sqLiteDatabase = openOrCreateDatabase(MyOpneHelper.databese_name,
+                    MODE_PRIVATE, null);
+            Cursor cursor = sqLiteDatabase.rawQuery("SELECT * FROM userTABLE WHERE User = " + "'" + userString + "'", null);
+            cursor.moveToFirst();
+            String[] resultStrings = new String[cursor.getColumnCount()];
+            for (int i = 0; i < cursor.getColumnCount(); i++) {
+                resultStrings[i] = cursor.getString(i);
+            }
+            cursor.close();
+
+            //Check Password
+            if (PasswordString.equals(resultStrings[2])) {
+                //Password True
+                Toast.makeText(this,
+                        "ยินดีต้อนรับ " + resultStrings[3],
+                        Toast.LENGTH_SHORT).show();
+
+            } else {
+                //Password False
+                MyAlertDialog myAlertDialog = new MyAlertDialog();
+                myAlertDialog.myDialog(this, "Password ผิด", "กรุณาพิมพ์ใหม่ Password ผิด");
+            }
+
+
+
+        } catch (Exception e) {
+            MyAlertDialog myAlertDialog = new MyAlertDialog();
+            myAlertDialog.myDialog(this, "User ผิด", "ไม่มี User นี่ในฐานข้อมูลของเรา");
+        }
+
+    }   // checkUser
 
     private void bindWidget() {
         userEditText = (EditText) findViewById(R.id.editText5);
