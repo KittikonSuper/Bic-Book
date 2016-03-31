@@ -23,11 +23,20 @@ public class ShowserviceActivity extends AppCompatActivity {
 
         bindWidget();
 
+        showView();
+
 
     }// Main Method
 
-    private void bindWidget() {
+    private void showView() {
+        nameString = getIntent().getStringExtra("NameUser");
+        showNameTextView.setText(nameString);
 
+    }
+
+    private void bindWidget() {
+        showNameTextView = (TextView) findViewById(R.id.textView7);
+        serviceListView = (ListView) findViewById(R.id.listView);
     }
 
 
