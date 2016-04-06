@@ -1,9 +1,11 @@
 package com.kru.pag.bicbook;
 
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -32,6 +34,16 @@ public class DetailActivity extends AppCompatActivity {
         showView();
 
     } //Main Method
+
+    public void clickOrder(View view) {
+        Intent intent = new Intent(DetailActivity.this, OrderActivity.class);
+        startActivity(intent);
+    }//
+
+    public void clickBackDetail(View view) {
+        finish();
+
+    }// clickOrder
 
     private void showView() {
         descripTextView.setText(resultStrings[3]);
